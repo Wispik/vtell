@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'PF BeauSans Pro';
+  src: url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Light.eot');
+  src: local('PFBeauSansPro-Light'),
+    url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Light.eot?#iefix') format('embedded-opentype'),
+    url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Light.woff2') format('woff2'),
+    url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Light.woff') format('woff'),
+    url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PF BeauSans Pro';
+  src: url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Regular.eot');
+  src: local('PFBeauSansPro-Regular'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Regular.woff2') format('woff2'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Regular.woff') format('woff'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PF BeauSans Pro';
+  src: url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Bold.eot');
+  src: local('PFBeauSansPro-Bold'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Bold.woff2') format('woff2'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Bold.woff') format('woff'),
+      url('@/assets/fonts/PFBeauSansPro/PFBeauSansPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: local('Kumbh Sans Bold'), local('Kumbh-Sans-Bold'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Bold.woff2') format('woff2'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Bold.woff') format('woff'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Kumbh Sans';
+  src: local('Kumbh Sans Light'), local('Kumbh-Sans-Light'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Light.woff2') format('woff2'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Light.woff') format('woff'),
+      url('@/assets/fonts/KumbhSans/KumbhSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
