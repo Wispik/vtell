@@ -45,7 +45,7 @@ const router = createRouter({
             {
               path: 'autopay',
               name: 'dashboard-bill-autopay',
-              component: () => import('../views/dashboard/bill/DashboardBillAutopayView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillAutoPayView.vue')
             },
             {
               path: 'reports',
