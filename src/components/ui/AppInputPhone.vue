@@ -4,15 +4,30 @@
       <div class="input-label" v-if="label">{{ label }}</div>
     </div>
     <div class="input-border">
-      <div class="input-select">
-        <img src="@/assets/images/flag-us.png">
-        <span>(+1)</span>
+      <div class="input-select" @click="togglePopup">
+        <img :src="`/images/flags/flag-${compSelectCode.flag}.png`">
+        <span>{{ `(${compSelectCode.code})` }}</span>
         <svg width="7" height="4" viewBox="0 0 7 4" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7 0H0L3.5 3.5L7 0Z" fill="#E5E5E5"/>
         </svg>
+        <div 
+          class="input-select__popup" 
+          v-if="showPopup"
+          v-click-outside="closePopup"
+        >
+          <div 
+            class="input-select__popup-item"
+            v-for="c in codes"
+            :key="c.code"
+            @click="selectItem(c.code)"
+          >
+            <img :src="`/images/flags/flag-${c.flag}.png`">
+            <span>{{ `(${c.code})` }}</span>
+          </div>
+        </div>
       </div>
       <input 
-        :type="text" 
+        type="text" 
         class="input" 
         placeholder="___ _______"
         :value="modelValue"
@@ -30,6 +45,38 @@ export default {
     label: { default: null },
     required: { default: false }
   },
+  data() {
+    return {
+      showPopup: false,
+      codes: [
+        {
+          code: '+1',
+          flag: 'us'
+        },
+        {
+          code: '+7',
+          flag: 'ru'
+        }
+      ],
+      selectCode: '+1'
+    }
+  },
+  methods: {
+    selectItem(code) {
+      this.selectCode = code
+    },
+    togglePopup() {
+      this.showPopup = ! this.showPopup
+    },
+    closePopup() {
+      this.showPopup = false
+    }
+  },
+  computed: {
+    compSelectCode() {
+      return this.codes.find(item => item.code === this.selectCode)
+    }
+  }
 }
 </script>
 
@@ -93,5 +140,24 @@ export default {
   border-right: 1px solid $text2-color;
   display: grid;
   grid-template-columns: 21px auto auto;
+  position: relative;
+}
+.input-select__popup {
+  position: absolute;
+  width: calc(100% + 10px);
+  left: -10px;
+  top: 100%;
+  background: $bg3-color;
+  border: 1px solid $text2-color;
+  border-radius: 5px;
+}
+.input-select__popup-item {
+  display: grid;
+  grid-template-columns: 21px auto;
+  align-items: center;
+  gap: 5px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>

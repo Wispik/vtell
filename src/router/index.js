@@ -20,18 +20,81 @@ const router = createRouter({
         },
         {
           path: 'bill',
-          name: 'dashboard-bill',
           component: () => import('../views/dashboard/DashboardBillView.vue'),
+          children: [
+            {
+              path: '',
+              name: 'dashboard-bill',
+              component: () => import('../views/dashboard/bill/DashboardBillItemizationView.vue')
+            },
+            {
+              path: 'montly',
+              name: 'dashboard-bill-montly',
+              component: () => import('../views/dashboard/bill/DashboardBillMontlyView.vue')
+            },
+            {
+              path: 'payment',
+              name: 'dashboard-bill-payment',
+              component: () => import('../views/dashboard/bill/DashboardBillPaymentView.vue')
+            },
+            {
+              path: 'pay',
+              name: 'dashboard-bill-pay',
+              component: () => import('../views/dashboard/bill/DashboardBillPayView.vue')
+            },
+            {
+              path: 'autopay',
+              name: 'dashboard-bill-autopay',
+              component: () => import('../views/dashboard/bill/DashboardBillAutopayView.vue')
+            },
+            {
+              path: 'reports',
+              name: 'dashboard-bill-reports',
+              component: () => import('../views/dashboard/bill/DashboardBillReportsView.vue')
+            }
+          ]
         },
         {
           path: 'services',
-          name: 'dashboard-services',
           component: () => import('../views/dashboard/DashboardServicesView.vue'),
+          children: [
+            {
+              path: '',
+              name: 'dashboard-services',
+              component: () => import('@/views/dashboard/services/DashboardServicesAdminView.vue')
+            },
+            {
+              path: 'plan',
+              name: 'dashboard-services-plan',
+              component: () => import('@/views/dashboard/services/DashboardServicesPlanView.vue')
+            },
+            {
+              path: 'services',
+              name: 'dashboard-services-services',
+              component: () => import('@/views/dashboard/services/DashboardServicesServicesView.vue')
+            },
+            {
+              path: 'call',
+              name: 'dashboard-services-call',
+              component: () => import('@/views/dashboard/services/DashboardServicesCallView.vue')
+            }
+          ]
         },
         {
           path: 'support',
-          name: 'dashboard-support',
           component: () => import('../views/dashboard/DashboardSupportView.vue'),
+          children: [
+            {
+              path: '',
+              name: 'dashboard-support',
+              component: () => import('../views/dashboard/support/DashboardSupportInfoView.vue'),
+            },
+            {
+              path: 'password',
+              name: 'dashboard-support-password-change',
+              component: () => import('../views/dashboard/support/DashboardSupportPasswordView.vue'),
+            }
+          ]
         }
       ]
     },
@@ -95,6 +158,32 @@ const router = createRouter({
           path: 'social',
           name: 'services-social',
           component: () => import('../views/services/ServicesSocialView.vue'),
+        }
+      ]
+    },
+    {
+      path: '/checkout',
+      component: () => import('../views/checkout/CheckoutMainView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'checkout-main',
+          component: () => import('../views/checkout/CheckoutConnectionView.vue'),
+        },
+        {
+          path: 'transfer',
+          name: 'checkout-transfer',
+          component: () => import('../views/checkout/CheckoutTransferView.vue'),
+        },
+        {
+          path: 'choose',
+          name: 'checkout-choose',
+          component: () => import('../views/checkout/CheckoutChooseView.vue'),
+        },
+        {
+          path: 'cart',
+          name: 'checkout-cart',
+          component: () => import('../views/checkout/CheckoutCartView.vue'),
         }
       ]
     }

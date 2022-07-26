@@ -47,7 +47,7 @@
             </svg>
             My V-Tell
           </router-link>
-          <div class="header-lang">
+          <div class="header-lang" v-if="showLang">
             <div class="header-lang__title">
               Choose Your Language
             </div>
@@ -116,7 +116,11 @@
 
 <script>
 export default {
-
+  props: {
+    showLang: {
+      default: true
+    }
+  }
 }
 </script>
 

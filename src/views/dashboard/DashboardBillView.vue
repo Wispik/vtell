@@ -1,16 +1,44 @@
 <template>
-  <app-switch v-model="sw" :small="small"/>
-  <app-input v-model="inp" label="test" datetext="акщт" type="date"/>
-  <app-button text="123" width="100" />
+  <div class="dashboard-grid">
+    <dashboard-menu-second :menu="menu" />
+    <div class="dashboard-content">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script>
+import DashboardMenuSecond from '@/components/dashboard/DashboardMenuSecond.vue'
 export default {
+  components: { DashboardMenuSecond },
   data() {
     return {
-      sw: false,
-      small: true,
-      inp: ''
+      menu: [
+       {
+          title: 'Itemization of Phone Calls',
+          routeName: 'dashboard-bill'
+        },
+        {
+          title: 'Monthly Bill',
+          routeName: 'dashboard-bill-montly'
+        },
+        {
+          title: 'Payment History',
+          routeName: 'dashboard-bill-payment'
+        },
+        {
+          title: 'Pay Your Bill',
+          routeName: 'dashboard-bill-pay'
+        },
+        {
+          title: 'Autopay Setup',
+          routeName: 'dashboard-bill-autopay'
+        },
+        {
+          title: 'Previously Ordered Reports',
+          routeName: 'dashboard-bill-reports'
+        }
+      ]
     }
   }
 }

@@ -43,7 +43,7 @@ export default {
   flex-flow: row nowrap;
   align-items: center;
   gap: 13px;
-  min-width: 48px;
+  width: 48px;
 
   &::before {
     content: '';
@@ -71,6 +71,10 @@ export default {
     width: 30px;
     height: 15px;
 
+    &::before {
+      width: 30px;
+    }
+
     & > .switch-thumb {
       left: 2px;
       width: 10px;
@@ -79,8 +83,7 @@ export default {
     }
 
     &.checked > .switch-thumb {
-      right: 2px;
-      left: auto;
+      left: 17px;
     }
   }
 }

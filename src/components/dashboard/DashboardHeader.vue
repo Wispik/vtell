@@ -1,5 +1,17 @@
 <template>
   <div class="dashboard__header">
+    <div class="dashboard__header-mobile only-mobile">
+      <router-link
+        to="/"
+      >
+        <img class="dashboard__header-mobile-logo" src="@/assets/images/logo-big.png">
+      </router-link>
+      <svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="25.9459" height="1.72973" rx="0.864865" fill="#E63739"/>
+        <rect y="20.7567" width="19.8919" height="1.72973" rx="0.864865" fill="#E63739"/>
+        <rect y="10.3784" width="32" height="1.72973" rx="0.864865" fill="#E63739"/>
+      </svg>
+    </div>
     <div class="dashboard__header-left">
       <router-link
         class="dashboard__header-link"
@@ -37,7 +49,7 @@
         My V-Tell
       </div>
     </div>
-    <div class="dashboard__header-right">
+    <div class="dashboard__header-right only-desktop">
       <div class="dashboard__header-right-block">
         <div class="dashboard__header-username">
           User Name
@@ -81,12 +93,23 @@ export default {
   flex-flow: row nowrap;
   justify-content: space-between;
   padding: 19px 50px 19px 33px;
+
+  @media (max-width: 980px) {
+    flex-direction: column;
+    padding: 0;
+    border-bottom: none;
+  }
 }
 .dashboard__header-left {
   display: flex;
   flex-direction: column;
   gap: 15px;
   justify-content: center;
+
+  @media (max-width: 980px) {
+    background: $bg2-color;
+    padding: 20px;
+  }
 }
 .dashboard__header-link {
   font-family: 'Kumbh Sans';
@@ -185,5 +208,16 @@ export default {
   & > svg {
     width: 10px;
   }
+}
+.dashboard__header-mobile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid $bg3-color;
+}
+.dashboard__header-mobile-logo {
+  width: 77px;
 }
 </style>

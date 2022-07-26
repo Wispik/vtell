@@ -1,13 +1,24 @@
 <template>
   <footer class="footer">
     <div class="container footer__body">
-      <div class="footer__block">
+      <div class="footer__block" :class="{'only-mobile': loginPage}">
         <div class="footer__block-item">© 2022 Globex Telecom Group Limited:<br class="only-mobile"> V-Tell Group of Companies.</div>
         <div class="footer__block-item">
           <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 5.29102C0 4.27148 0.228516 3.36328 0.685547 2.56641C1.14258 1.76953 1.76953 1.14258 2.56641 0.685547C3.36328 0.228516 4.27441 0 5.2998 0C6.31934 0 7.22754 0.228516 8.02441 0.685547C8.82129 1.14258 9.44824 1.76953 9.90527 2.56641C10.3623 3.36328 10.5908 4.27148 10.5908 5.29102C10.5908 6.31055 10.3623 7.21875 9.90527 8.01562C9.44824 8.8125 8.82129 9.43945 8.02441 9.89648C7.22754 10.3535 6.31934 10.582 5.2998 10.582C4.27441 10.582 3.36328 10.3535 2.56641 9.89648C1.76953 9.43945 1.14258 8.8125 0.685547 8.01562C0.228516 7.21875 0 6.31055 0 5.29102ZM1.23047 5.29102C1.23047 6.08203 1.40625 6.78809 1.75781 7.40918C2.10938 8.03027 2.59277 8.51953 3.20801 8.87695C3.82324 9.22852 4.52051 9.4043 5.2998 9.4043C5.84473 9.4043 6.34863 9.31641 6.81152 9.14062C7.28027 8.95898 7.69336 8.70703 8.05078 8.38477H6.40723L5.08887 6.13477H4.76367V8.38477H3.19922V2.25H5.3877C6.17285 2.25 6.78223 2.42871 7.21582 2.78613C7.64941 3.14355 7.86621 3.6123 7.86621 4.19238C7.86621 5.00098 7.47656 5.56934 6.69727 5.89746L8.12109 8.32324C8.50781 7.9541 8.80957 7.51172 9.02637 6.99609C9.24902 6.48047 9.36035 5.91211 9.36035 5.29102C9.36035 4.5 9.18164 3.79688 8.82422 3.18164C8.47266 2.56055 7.99219 2.07129 7.38281 1.71387C6.77344 1.35645 6.0791 1.17773 5.2998 1.17773C4.52051 1.17773 3.82324 1.35645 3.20801 1.71387C2.59277 2.07129 2.10938 2.56055 1.75781 3.18164C1.40625 3.79688 1.23047 4.5 1.23047 5.29102ZM5.24707 4.86914C5.56348 4.86914 5.81543 4.81641 6.00293 4.71094C6.19043 4.59961 6.28418 4.42676 6.28418 4.19238C6.28418 3.95801 6.19043 3.78809 6.00293 3.68262C5.81543 3.57715 5.56348 3.52441 5.24707 3.52441H4.76367V4.86914H5.24707Z" fill="#E5E5E5"/>
           </svg>
           All rights reserved.
+        </div>
+      </div>
+      <div class="footer__block only-desktop" v-if="loginPage">
+        <div class="footer__block-item">© 2021 V-Tell Group of Companies</div>
+      </div>
+      <div class="footer__block-login-page only-desktop" v-if="loginPage">
+        <div class="footer__block-login-page-item">
+          Customer Service or Contact us: <a href="tel:9090">9090</a>
+        </div>
+        <div class="footer__block-login-page-item">
+          Email: <a href="mailto:service@v-tell.com">service@v-tell.com</a>
         </div>
       </div>
       <div class="footer__block footer__block-last">
@@ -52,7 +63,11 @@
 
 <script>
 export default {
-
+  props: { 
+    loginPage: {
+      default: false
+    }
+  }
 }
 </script>
 
@@ -106,6 +121,23 @@ export default {
   & > a {
     display: flex;
     align-items: center;
+  }
+}
+.footer__block-login-page {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.footer__block-login-page-item {
+  padding: 0 14px;
+
+  & + & {
+    border-left: 1px solid $text3-color;
+  }
+
+  & > a {
+    color: $text-color;
+    text-decoration: underline;
   }
 }
 </style>

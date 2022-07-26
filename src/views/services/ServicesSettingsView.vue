@@ -72,6 +72,14 @@ export default {
       switchSMS: true,
       switchPush: true,
     }
+  },
+  watch: {
+    switchEng() {
+      this.switchRus = !this.switchEng
+    },
+    switchRus() {
+      this.switchEng = !this.switchRus
+    }
   }
 }
 </script>

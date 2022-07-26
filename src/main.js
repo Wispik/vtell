@@ -9,10 +9,13 @@ import AppButton from './components/ui/AppButton.vue'
 import AppCheckbox from './components/ui/AppCheckbox.vue'
 import AppRadio from './components/ui/AppRadio.vue'
 
+import vClickOutside  from 'click-outside-vue3'
+
 import 'swiper/css';
 
 createApp(App)
   .use(router)
+  .use(vClickOutside)
   .component('AppSwitch', AppSwitch)
   .component('AppInput', AppInput)
   .component('AppInputPhone', AppInputPhone)

@@ -9,6 +9,7 @@
         type="radio" 
         class="radio-input"
         :name="name"
+        :checked="item.checked"
       >
       <span>{{ item.label }}</span>
     </label>
@@ -19,8 +20,7 @@
 export default {
   props: {
     name: { required: true },
-    items: { required: true },
-    modelValue: { required: true }
+    items: { required: true }
   }
 }
 </script>

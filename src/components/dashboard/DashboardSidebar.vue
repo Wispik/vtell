@@ -29,7 +29,7 @@
       </router-link>
       <router-link
         class="sidebar__link svg-path-fill"
-        exact-active-class="sidebar__link-active"
+        active-class="sidebar__link-active"
         :to="{'name': 'dashboard-bill'}"
       >
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,7 +39,7 @@
       </router-link>
       <router-link
         class="sidebar__link svg-path-fill"
-        exact-active-class="sidebar__link-active"
+        active-class="sidebar__link-active"
         :to="{'name': 'dashboard-services'}"
       >
         <svg width="20" height="33" viewBox="0 0 20 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@
       </router-link>
       <router-link
         class="sidebar__link"
-        exact-active-class="sidebar__link-active"
+        active-class="sidebar__link-active"
         :to="{'name': 'dashboard-support'}"
       >
         <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@
     </div>
     <router-link
       class="sidebar__link"
-      exact-active-class="sidebar__link-active"
+      active-class="sidebar__link-active"
       :to="{'name': 'login'}"
     >
       <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -47,6 +47,7 @@ export default {
   background: $red-color;
   cursor: pointer;
   max-width: 100%;
+  user-select: none;
 
   &.bordered {
     background: transparent;
