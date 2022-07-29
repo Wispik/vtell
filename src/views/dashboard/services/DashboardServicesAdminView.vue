@@ -39,31 +39,11 @@
   <div class="title services-title">Phone Number Requests</div>
   <div class="sub-title">You have no requested phone numbers</div>
   <div class="services-delimeter"></div>
-  <div class="services-dropdown">
-    <div class="services-dropdown__body">
-      <div class="services-dropdown__title">
-        Add a new number
-      </div>
-      <div class="services-dropdown__text">
-        Select any country and quantity of numbers that we have available for you
-      </div>
-    </div>
-    <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M23.6805 0.77402C23.2545 0.348056 22.5637 0.347983 22.1377 0.774092L12.0003 10.9118L1.86229 0.77402C1.43633 0.348056 0.745564 0.347983 0.319527 0.774092C-0.106509 1.20013 -0.106509 1.89082 0.319527 2.31686L11.2289 13.2259C11.4335 13.4305 11.7109 13.5454 12.0003 13.5454C12.2896 13.5454 12.5671 13.4305 12.7716 13.2259L23.6804 2.31678C24.1065 1.89082 24.1065 1.20006 23.6805 0.77402Z" fill="#E5E5E5"/>
+  <div class="services-add-btn">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.2222 2H3.77778C2.79556 2 2 2.79556 2 3.77778V16.2222C2 17.2044 2.79556 18 3.77778 18H16.2222C17.2044 18 18 17.2044 18 16.2222V3.77778C18 2.79556 17.2044 2 16.2222 2ZM14.4444 10.8889H10.8889V14.4444H9.11111V10.8889H5.55556V9.11111H9.11111V5.55556H10.8889V9.11111H14.4444V10.8889Z" fill="#E63739"/>
     </svg>
-  </div>
-  <div class="services-dropdown">
-    <div class="services-dropdown__body">
-      <div class="services-dropdown__title">
-        History of changes
-      </div>
-      <div class="services-dropdown__text">
-        Check your number management records
-      </div>
-    </div>
-    <svg width="24" height="14" viewBox="0 0 24 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M23.6805 0.77402C23.2545 0.348056 22.5637 0.347983 22.1377 0.774092L12.0003 10.9118L1.86229 0.77402C1.43633 0.348056 0.745564 0.347983 0.319527 0.774092C-0.106509 1.20013 -0.106509 1.89082 0.319527 2.31686L11.2289 13.2259C11.4335 13.4305 11.7109 13.5454 12.0003 13.5454C12.2896 13.5454 12.5671 13.4305 12.7716 13.2259L23.6804 2.31678C24.1065 1.89082 24.1065 1.20006 23.6805 0.77402Z" fill="#E5E5E5"/>
-    </svg>
+    Add a new number
   </div>
 </template>
 
@@ -127,49 +107,18 @@ export default {
   background: $bg3-color;
   margin: 50px 0 50px -300px;
 }
-.services-dropdown {
+.services-add-btn {
   display: flex;
-  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 40px 20px 25px;
-  border-radius: 5px;
+  gap: 13px;
   background: $bg3-color;
-  margin-top: 12px;
-
-  @media (max-width: 980px) {
-    padding: 20px 15px;
-    gap: 20px;
-    display: grid;
-    grid-template-columns: 1fr 14px;
-
-    & > svg {
-      width: 14px;
-    }
-  }
-}
-.services-dropdown__body {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.services-dropdown__title {
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 24px;
-
-  @media (max-width: 980px) {
-    font-size: 18px;
-    line-height: 21px;
-  }
-}
-.services-dropdown__text {
-  font-size: 14px;
-  color: $text2-color;
-
-  @media (max-width: 980px) {
-    font-size: 15px;
-    font-weight: 300;
-  }
+  text-transform: capitalize;
+  color: $red-color;
 }
 </style>

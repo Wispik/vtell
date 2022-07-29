@@ -17,6 +17,7 @@ const router = createRouter({
           path: '',
           name: 'dashboard-account',
           component: () => import('../views/dashboard/DashboardAccountView.vue'),
+          meta: { breadTitle: 'Login — My Account' }
         },
         {
           path: 'bill',
@@ -25,32 +26,38 @@ const router = createRouter({
             {
               path: '',
               name: 'dashboard-bill',
-              component: () => import('../views/dashboard/bill/DashboardBillItemizationView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillItemizationView.vue'),
+              meta: { breadTitle: 'Login — Bill — Itemization of Phone Calls' }
             },
             {
               path: 'montly',
               name: 'dashboard-bill-montly',
-              component: () => import('../views/dashboard/bill/DashboardBillMontlyView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillMontlyView.vue'),
+              meta: { breadTitle: 'Login — Bill — Monthly Bill' }
             },
             {
               path: 'payment',
               name: 'dashboard-bill-payment',
-              component: () => import('../views/dashboard/bill/DashboardBillPaymentView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillPaymentView.vue'),
+              meta: { breadTitle: 'Login — Bill — Payment History' }
             },
             {
-              path: 'pay',
-              name: 'dashboard-bill-pay',
-              component: () => import('../views/dashboard/bill/DashboardBillPayView.vue')
+              path: 'funds',
+              name: 'dashboard-bill-funds',
+              component: () => import('../views/dashboard/bill/DashboardBillAddFundsView.vue'),
+              meta: { breadTitle: 'Login — Bill — Add Funds' }
             },
             {
               path: 'autopay',
               name: 'dashboard-bill-autopay',
-              component: () => import('../views/dashboard/bill/DashboardBillAutoPayView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillAutoPayView.vue'),
+              meta: { breadTitle: 'Login — Bill — Autopay Setup' }
             },
             {
               path: 'reports',
               name: 'dashboard-bill-reports',
-              component: () => import('../views/dashboard/bill/DashboardBillReportsView.vue')
+              component: () => import('../views/dashboard/bill/DashboardBillReportsView.vue'),
+              meta: { breadTitle: 'Login — Bill — Previously Ordered Reports' }
             }
           ]
         },
@@ -61,22 +68,38 @@ const router = createRouter({
             {
               path: '',
               name: 'dashboard-services',
-              component: () => import('@/views/dashboard/services/DashboardServicesAdminView.vue')
+              component: () => import('@/views/dashboard/services/DashboardServicesAdminView.vue'),
+              meta: { breadTitle: 'Login — Services — Admin Your Phone Numbers' }
             },
             {
               path: 'plan',
               name: 'dashboard-services-plan',
-              component: () => import('@/views/dashboard/services/DashboardServicesPlanView.vue')
+              component: () => import('@/views/dashboard/services/DashboardServicesPlanView.vue'),
+              meta: { breadTitle: 'Login — Services — Plan Change' }
             },
             {
               path: 'services',
-              name: 'dashboard-services-services',
-              component: () => import('@/views/dashboard/services/DashboardServicesServicesView.vue')
-            },
-            {
-              path: 'call',
-              name: 'dashboard-services-call',
-              component: () => import('@/views/dashboard/services/DashboardServicesCallView.vue')
+              component: () => import('@/views/dashboard/services/DashboardServicesServicesMainView.vue'),
+              children: [
+                {
+                  path: '',
+                  name: 'dashboard-services-services',
+                  component: () => import('@/views/dashboard/services/DashboardServicesSettingsView.vue'),
+                  meta: { breadTitle: 'Login — Services — Services — Settings' }
+                },
+                {
+                  path: 'connect',
+                  name: 'dashboard-services-services-connect',
+                  component: () => import('@/views/dashboard/services/DashboardServicesConnectView.vue'),
+                  meta: { breadTitle: 'Login — Services — Services — Connect with us' }
+                },
+                {
+                  path: 'social',
+                  name: 'dashboard-services-services-social',
+                  component: () => import('@/views/dashboard/services/DashboardServicesSocialView.vue'),
+                  meta: { breadTitle: 'Login — Services — Services — Social networks' }
+                }
+              ]
             }
           ]
         },
@@ -88,11 +111,13 @@ const router = createRouter({
               path: '',
               name: 'dashboard-support',
               component: () => import('../views/dashboard/support/DashboardSupportInfoView.vue'),
+              meta: { breadTitle: 'Login — Support — Personal Info' }
             },
             {
               path: 'password',
               name: 'dashboard-support-password-change',
               component: () => import('../views/dashboard/support/DashboardSupportPasswordView.vue'),
+              meta: { breadTitle: 'Login — Support — Change Password' }
             }
           ]
         }
@@ -139,27 +164,6 @@ const router = createRouter({
       path: '/number-management/add',
       name: 'number-management-add',
       component: () => import('../views/NumberManagementAddNumberView.vue'),
-    },
-    {
-      path: '/services',
-      component: () => import('../views/services/ServicesMainView.vue'),
-      children: [
-        {
-          path: '',
-          name: 'services-settings',
-          component: () => import('../views/services/ServicesSettingsView.vue'),
-        },
-        {
-          path: 'connect',
-          name: 'services-connect',
-          component: () => import('../views/services/ServicesConnectView.vue'),
-        },
-        {
-          path: 'social',
-          name: 'services-social',
-          component: () => import('../views/services/ServicesSocialView.vue'),
-        }
-      ]
     },
     {
       path: '/checkout',

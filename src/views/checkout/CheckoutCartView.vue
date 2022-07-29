@@ -49,6 +49,23 @@
       FREE 
     </div>
   </div>
+  <div class="cart-delimeter only-desktop"></div>
+  <div class="cart-bottom">
+    <div class="cart-bottom-left">
+      <div class="cart-bottom-left-title">
+        Summary
+      </div>
+      <div class="cart-bottom-left-text">
+        <span>
+          Payment by credit/debit card
+        </span>
+         upon receipt at the office or delivery to the specified address.
+      </div>
+    </div>
+    <div class="cart-bottom-right">
+      <span>$</span>98
+    </div>
+  </div>
   <div class="conn__buttons">
     <app-button 
       text="Back" 
@@ -83,5 +100,26 @@ export default {
   flex-flow: row nowrap;
   gap: 10px;
   align-items: center;
+}
+.cart-block-title {
+  color: $text2-color;
+
+  & > span {
+    color: $text-color;
+  }
+}
+.cart-block-button {
+  color: $red-color;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: pointer;
+}
+.cart-block-right {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div 
     class="switch" 
-    :class="{'checked': modelValue, 'small': small}"
+    :class="{'checked': modelValue, 'small': small, 'width-auto': label}"
     @click="clickSwitch"
   >
     <div class="switch-thumb"></div>
@@ -44,6 +44,10 @@ export default {
   align-items: center;
   gap: 13px;
   width: 48px;
+
+  &.width-auto {
+    width: auto;
+  }
 
   &::before {
     content: '';

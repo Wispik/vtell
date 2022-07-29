@@ -1,10 +1,9 @@
 <template>
   <swiper
-    :width=310
-    class="tabs"
+    :width=width
+    :height=60
+    class="tab-mobile only-mobile"
     :slideToClickedSlide="true"
-    :enabled="swiperEnabled"
-    @swiper="onSwiper"
   >
     <swiper-slide
       v-for="tab in tabs"
@@ -20,6 +19,18 @@
         </router-link>
     </swiper-slide>
   </swiper>
+  <div class="tabs only-desktop" :style="{'width': tabsWidth}">
+    <router-link
+      v-for="tab in tabs"
+      :key="tab.id"
+      class="tab"
+      :class="{'tab-first': tab.id===1, 'tab-last': tab.id===tabs.length}"
+      exact-active-class="tab-active"
+      :to="{'name': tab.routeName}"
+    >
+      {{ tab.title }}
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -27,57 +38,27 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   props: {
-    tabs: { required: true }
+    tabs: { required: true },
+    width: { required: true },
+    tabsWidth: { default: '100%' }
   },
   components: { Swiper, SwiperSlide },
-  data() {
-    return {
-      screenWidth: 0,
-      sw: null
-    }
-  },
-  created() {
-    this.getScreenWidth()
-    window.addEventListener("resize", this.getScreenWidth)
-    
-  },
-  unmounted() {
-    window.removeEventListener("resize", this.getScreenWidth)
-  },
-  methods: {
-    getScreenWidth() {
-      this.screenWidth = document.documentElement.scrollWidth
-    },
-    onSwiper(swiper) {
-      this.sw = swiper
-    }
-  },
-  computed: {
-    swiperEnabled() {
-      return 310*this.tabs.length > this.screenWidth
-    }
-  },
-  watch: {
-    swiperEnabled() {
-      if (this.sw) {
-        if (this.swiperEnabled) this.sw.enable()
-        else this.sw.disable()
-      }
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .tabs {
   margin-bottom: 45px;
+  display: flex;
+  flex-flow: row nowrap;
 
   @media (max-width: 980px) {
     margin-bottom: 30px;
   }
+
 }
 .tab {
-  width: 310px;
+  flex: 1;
   height: 77px;
   display: flex;
   align-items: center;
@@ -85,10 +66,17 @@ export default {
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
-  color: $text3-color;
+  color: $text2-color;
   border-top: 1px solid $text2-color;
   border-bottom: 1px solid $text2-color;
   border-left: 1px solid $text2-color;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($bg2-color, 40);
+  }
 
   &.tab-active {
     background: $red-color;
@@ -110,5 +98,9 @@ export default {
   @media (max-width: 980px) {
     height: 60px;
   }
+}
+.tab-mobile {
+  margin-bottom: 30px;
+  width: calc(100vw );
 }
 </style>

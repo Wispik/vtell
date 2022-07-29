@@ -49,16 +49,28 @@ export default {
   max-width: 100%;
   user-select: none;
 
+  &:hover {
+    background: darken($red-color, 10);
+  }
+
   &.bordered {
     background: transparent;
     border: 1px solid #FAFAFA;
     border-radius: 5px;
+
+    &:hover {
+      background: #ffffff0e;
+    }
 
     &.bordered-red {
       background: transparent;
       border: 1px solid $red-color;
       border-radius: 5px;
       color: $red-color;
+
+      &:hover {
+        background: #ffffff0e;
+      }
     }
   }
 
@@ -66,6 +78,10 @@ export default {
     background: $bg3-color;
     box-shadow: 0px 4px 10px rgba(49, 15, 15, 0.25);
     border-radius: 5px;
+
+    &:hover {
+      background: #ffffff0e;
+    }
   }
 }
 </style>

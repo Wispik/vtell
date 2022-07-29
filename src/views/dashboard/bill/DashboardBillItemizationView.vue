@@ -1,14 +1,14 @@
 <template>
   <div class="title">Itemization of Phone Calls</div>
   <div class="sub-title bill-title">
-    Request itemization of phone calls throughout this section.
+    Request itemization of phone calls.
     <span>
       Service is free of charge.
     </span>
   </div>
   <form class="bill-form">
     <app-input 
-      label="Receive For the Period"
+      label="Requested time frame"
       v-model="dateFrom"
       type="date"
       datetext="From:"
@@ -40,7 +40,7 @@ export default {
       radioItems: [
         {
           id: 1,
-          label: 'See List Now',
+          label: 'Download and view now',
           checked: "true"
         },
         {

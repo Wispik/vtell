@@ -6,6 +6,7 @@
         If you are calling a country not on your list, please select which country to set as Default number AND If you have multiple phone numbers in a single country, please select which phone number you would like displayed on your called party’s caller ID.
       </div>
     </div>
+    <div class="dash-acc__title-min">Phone Numbers</div>
     <div class="dash-block__flex">
       <div 
         class="dash-block__flex-item"
@@ -24,13 +25,18 @@
               :class="{'checked': phone.checked && item.checked}"
               v-for="phone in item.phones"
               :key="phone.id"
+              @click="selectPhone(item, phone.id)"
             >
               {{ phone.phone }}
-              <app-switch 
-                v-if="item.checked"
-                v-model="phone.checked" 
-                :small="true" 
-              />
+              <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 7.35135L7.42857 13L18 2" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div 
+                class="dash-block__phone-body-item-text"
+                v-if="phone.checked && item.checked"  
+              >
+                The service is connected 
+              </div>
             </div>
           </div>
         </div>
@@ -168,8 +174,26 @@ export default {
           num: ' 2 500',
           val: 'min',
           date: 'Till Jan 1, 2022'
+        },
+        {
+          id: 3,
+          title: 'SMS',
+          num: ' 500',
+          val: 'sms',
+          date: 'Till Jan 1, 2022'
         }
       ]
+    }
+  },
+  methods: {
+    selectPhone(item, phoneId) {
+      item.phones.forEach(el => {
+        if (el.id === phoneId) {
+          el.checked = true
+        } else {
+          el.checked = false
+        }
+      })
     }
   }
 }
@@ -178,10 +202,12 @@ export default {
 <style lang="scss" scoped>
 .dash-block-main {
   display: flex;
-  flex-flow: row nowrap;
+  flex-direction: column;
   padding: 60px 36px;
-  gap: 95px;
+  gap: 12px;
   border-bottom: 1px solid $bg3-color;
+  max-width: 1144px;
+  width: inherit;
 
   @media (max-width: 980px) {
     padding: 50px 20px;
@@ -214,6 +240,8 @@ export default {
 }
 .dash-block__flex {
   display: flex;
+  flex-direction: column;
+  width: 100%;
   gap: 16px;
 
   @media (max-width: 980px) {
@@ -226,13 +254,9 @@ export default {
 .dash-block__phone {
   display: flex;
   flex-direction: column;
-  width: 225px;
+  width: 100%;
   background: $bg3-color;
   border-radius: 5px;
-
-  @media (max-width: 980px) {
-    width: 100%;
-  }
 }
 .dash-block__phone-title {
   display: grid;
@@ -257,14 +281,19 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
+  gap: 18px;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
   color: $text2-color;
+  cursor: pointer;
 
   &.checked {
     color: $green-color;
+
+    & svg path{
+      stroke: $green-color;
+    }
   }
 }
 .dash-block {
@@ -349,5 +378,20 @@ export default {
   line-height: 17px;
   color: $text2-color;
   white-space: nowrap;
+}
+.dash-acc__title-min {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 30px;
+
+  @media (max-width: 980px) {
+    margin-top: 0px;
+  }
+}
+.dash-block__phone-body-item-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: $text2-color;
 }
 </style>

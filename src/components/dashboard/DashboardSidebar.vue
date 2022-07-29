@@ -120,6 +120,10 @@ export default {
   justify-content: center;
   gap: 8px;
 
+  &:hover{
+    background: darken($bg3-color, 3);
+  }
+
   &.sidebar__link-active {
     background: rgba(0, 0, 0, 0.4);
     color: $red-color;

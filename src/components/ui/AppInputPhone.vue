@@ -2,6 +2,7 @@
   <div class="input-block">
     <div class="input-title__block">
       <div class="input-label" v-if="label">{{ label }}</div>
+      <div class="input-label2" v-if="label2">{{ label2 }}</div>
     </div>
     <div class="input-border">
       <div class="input-select" @click="togglePopup">
@@ -30,6 +31,7 @@
         type="text" 
         class="input" 
         placeholder="___ _______"
+        v-maska="'### #######'"
         :value="modelValue"
         :required="required"
         @input="(event) => $emit('update:modelValue', event.target.value)"
@@ -43,6 +45,7 @@ export default {
   props: {
     modelValue: { type: String },
     label: { default: null },
+    label2: { default: null },
     required: { default: false }
   },
   data() {
@@ -124,6 +127,19 @@ export default {
   font-size: 18px;
   line-height: 21px;
 }
+.input-label2 {
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: $text2-color;
+  text-align: right;
+
+  @media (max-width: 980px) {
+    font-size: 16px;
+  }
+}
 .input-title__block {
   display: flex;
   flex-flow: row nowrap;
@@ -141,6 +157,7 @@ export default {
   display: grid;
   grid-template-columns: 21px auto auto;
   position: relative;
+  user-select: none;
 }
 .input-select__popup {
   position: absolute;

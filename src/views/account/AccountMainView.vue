@@ -6,7 +6,7 @@
     title-min="Payment"
   />
   <div class="content container account-content">
-    <app-tabs  :tabs="tabs" />
+    <app-tabs  :tabs="tabs" :width=310 tabs-width="620px" />
     <div class="flex-col">
       <router-view />
     </div>

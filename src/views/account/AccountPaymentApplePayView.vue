@@ -8,6 +8,7 @@
     <app-input 
       label="Replenishment amount not less than $100:"
       placeholder="$100.00"
+      mask="$#*"
     />
   </div>
   <app-checkbox label="Receipt required" />
@@ -21,6 +22,7 @@
     <app-input 
       label="Connect auto payment:"
       placeholder="$100.00"
+      mask="$#*"
       :switch="true"
     />
   </div>
@@ -28,6 +30,7 @@
     <app-input 
       label="Connect auto-replenishment:"
       placeholder="$100.00"
+      mask="$#*"
       :switch="true"
     />
   </div>

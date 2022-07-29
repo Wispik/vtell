@@ -1,19 +1,14 @@
 <template>
   <div class="title">
-    Personal Info update
+    Personal Info
   </div>
-  <div class="sub-title">Manage your personal data throughout this section.</div>
+  <div class="sub-title">Manage your personal data.</div>
   <form class="form-support">
     <app-input 
       label="Email"
       type="email"
       v-model="email"
       placeholder="Enter your email address"
-    />
-    <app-input 
-      label="Date of Birth"
-      type="date"
-      v-model="date"
     />
     <app-input-phone 
       label="Contact Phone Number"
@@ -30,7 +25,6 @@ export default {
   data() {
     return {
       email: '',
-      date: '2010-01-01',
       phone: ''
     }
   }

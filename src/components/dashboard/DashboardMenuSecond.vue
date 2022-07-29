@@ -57,6 +57,10 @@ export default {
   padding: 30px;
   border-bottom: 1px solid $bg3-color;
 
+  &:hover{
+    background: rgba(0, 0, 0, 0.2);
+  }
+
   &.mobile {
     font-size: 16px;
     border-top: 1px solid $bg3-color;

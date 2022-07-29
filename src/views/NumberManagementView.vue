@@ -35,7 +35,10 @@
       </div>
     </div>
     <div class="numb-btn">
-      <app-button text="Connect additional number" />
+      <app-button 
+        text="Connect additional number" 
+        @click="$router.push({'name': 'number-management-add'})"  
+      />
     </div>
   </div>
   <app-footer-second />

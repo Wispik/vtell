@@ -27,8 +27,8 @@ export default {
           routeName: 'dashboard-bill-payment'
         },
         {
-          title: 'Pay Your Bill',
-          routeName: 'dashboard-bill-pay'
+          title: 'Add Funds',
+          routeName: 'dashboard-bill-funds'
         },
         {
           title: 'Autopay Setup',

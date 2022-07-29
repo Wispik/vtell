@@ -20,8 +20,8 @@
       <app-button text="Change" :bordered-red="true" @click="block1.showEdit=true" />
     </div>
     <div class="account-block__edit" v-if="block1.showEdit && block1.showDetails">
-      <app-input v-model="block1.date" :select="true" />
-      <app-input v-model="block1.price" :select="true" />
+      <app-input v-model="block1.date" type="date" :select="true" />
+      <app-input v-model="block1.price" mask="$#*" :select="true" />
       <app-button text="Save Changes" @click="block1.showEdit=false" />
     </div>
   </div>
@@ -41,8 +41,8 @@
       <app-button text="Change" :bordered-red="true" @click="block2.showEdit=true" />
     </div>
     <div class="account-block__edit" v-if="block2.showEdit && block2.showDetails">
-      <app-input v-model="block2.date" :select="true" />
-      <app-input v-model="block2.price" :select="true" />
+      <app-input v-model="block2.date" type="date" :select="true" />
+      <app-input v-model="block2.price" mask="$#*" :select="true" />
       <div class="account-block__edit-btn">
         <app-button text="Save Changes" @click="block2.showEdit=false" />
       </div>
@@ -61,14 +61,14 @@ export default {
   data() {
     return {
       block1: {
-        date: '11/12/2021',
-        price: '$123.00',
+        date: '2021-12-11',
+        price: '$123',
         showDetails: false,
         showEdit: false
       },
       block2: {
-        date: '11/12/2021',
-        price: '$123.00',
+        date: '2021-12-11',
+        price: '$123',
         showDetails: false,
         showEdit: false
       }

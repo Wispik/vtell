@@ -48,6 +48,7 @@
         </svg>
         My V-Tell
       </div>
+      <span class="bread only-desktop">{{ $route.meta.breadTitle }}</span>
     </div>
     <div class="dashboard__header-right only-desktop">
       <div class="dashboard__header-right-block">
@@ -103,7 +104,7 @@ export default {
 .dashboard__header-left {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   justify-content: center;
 
   @media (max-width: 980px) {
@@ -219,5 +220,11 @@ export default {
 }
 .dashboard__header-mobile-logo {
   width: 77px;
+}
+.bread {
+  font-size: 14px;
+  line-height: 17px;
+  color: $text2-color;
+  margin-top: -10px;
 }
 </style>

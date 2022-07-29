@@ -1,6 +1,6 @@
 <template>
   <div class="title">Change Password</div>
-  <div class="sub-title">Use the form to set a new password for the account.</div>
+  <div class="sub-title">Set a new password for you account</div>
   <form class="form-support-pass">
     <app-input 
       type="password"
@@ -45,7 +45,7 @@ export default {
   gap: 24px;
   max-width: 500px;
   width: inherit;
-  margin-top: 32px;
+  margin-top: 40px;
 
   @media (max-width: 980px) {
     gap: 20px;

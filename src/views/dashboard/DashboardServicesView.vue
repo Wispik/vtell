@@ -9,6 +9,7 @@
 
 <script>
 import DashboardMenuSecond from '@/components/dashboard/DashboardMenuSecond.vue'
+
 export default {
   components: { DashboardMenuSecond },
   data() {
@@ -25,10 +26,6 @@ export default {
         {
           title: 'Services',
           routeName: 'dashboard-services-services'
-        },
-        {
-          title: 'Call Forwarding',
-          routeName: 'dashboard-services-call'
         }
       ]
     }

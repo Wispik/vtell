@@ -15,11 +15,11 @@ export default {
     return {
       menu: [
        {
-          title: 'personal Info Update',
+          title: 'personal Info',
           routeName: 'dashboard-support'
         },
         {
-          title: 'Password Change',
+          title: 'Change Password',
           routeName: 'dashboard-support-password-change'
         }
       ]

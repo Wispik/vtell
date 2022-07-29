@@ -24,7 +24,7 @@
               </clipPath>
               </defs>
             </svg>
-            BACK TO HOMEPAGE
+            BACK TO WELCOME PAGE
           </router-link>
           <div class="login-page__top-name">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
